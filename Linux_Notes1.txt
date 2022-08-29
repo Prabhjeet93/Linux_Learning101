@@ -1,0 +1,78 @@
+Linux Notes1
+
+
+kali@linux1:~$   ->
+kali -> it means kali is current user
+ @linux1 -> host name is linux1
+ ~ -> current directory. here it is home directory
+ $ -> it means we loggedin as normal user
+ pound sign -> if user logged in as root or admin
+
+ Commands -
+ whoami -> returns username of the user
+ hostname - returns current hostname
+ pwd - print working directory -: current directry where working.
+ ls - list of the files and sub directories in current directory. .
+ ls -a -> list of hidden and unhidden files and direcories
+ ls -al -> list of hidden and unhidden files and direcories with detail of modesdates of creation like below.
+ drwx------  3 kali kali  4096 Jul  1 16:12  .dbus
+drwxr-xr-x  3 kali kali  4096 Jul 17 08:37  Desktop
+
+ cd - change directory
+ man <command> -> manual page of the command.
+ info < command> -> documented page of the command.
+ <command> --help -> tell about the options we can put in a command.
+Notes - :  explainshell.com -> tell more about the commands.
+more and less command - Look inside the files.
+These commands only useful in text file, if we try jpeg or any other format, output will be not as expected. It will be some gibberish.
+
+$ more <filename>
+it will show content of the file with first page and then click on space bar it will show next page. click again space for the next page. like this.
+When done, press q to quit
+
+$ less <filename>
+like more command but with more functionality. it will also show content of the file with first page.
+Page up button and page down button for the page up and down
+and then up and down arrow key to move to next or previous line only. It is line by line.
+/<search keyword>
+we can search in the file using / -> /<search keyword> -> /top
+for next searched keyword, press n. 
+Press q key to quit when done.
+cat command: -
+	concatenate files and print on standard output.
+$ cat -> it will echo whatever we will type. As file name is optional.
+$ cat 
+Hello – we typed
+Hello – cat printed
+$ cat <filename1> -> output the content of the filename1 file
+$ cat <filename1> <filename2> -> concatenate and show output of the filename1 and filenme2.
+Ram
+Shayam
+Kam
+John
+Viktor
+
+$ cat -b <filename1> <filename2> -> -b will add numbers on each line. So output will be like.
+1.	Ram
+2.	Shyam
+3.	Kam
+4.	John
+5.	viktor
+ctrl+d -> to exit from cat command
+
+to redirect content to the new file
+$ cat file1.txt file2.txt > combine.txt  -> it will create a new file which will have content of the both files.
+$ cat combine.txt -> it will show content of the both file.
+Create empty file with cat.
+(kali㉿kali)-[~/linux_learning]
+$ cat > file1.txt  
+hello
+world
+good bye
+Linux
+$ cat file1.txt                                                                                                                                        
+hello
+world
+good bye
+Linux
+
