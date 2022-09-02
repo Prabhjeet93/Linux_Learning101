@@ -1,0 +1,129 @@
+Installing Software
+apt command – 
+	apt provides a high-level command line interface for the package management system.
+
+$ apt update -> to update the package.
+Or 
+$ sudo apt update
+[sudo] password for kali: 
+Get:1 http://kali.download/kali kali-rolling InRelease [30.6 kB]
+Get:2 http://kali.download/kali kali-rolling/main amd64 Packages [18.3 MB]
+Get:3 http://kali.download/kali kali-rolling/main amd64 Contents (deb) [42.4 MB]
+Get:4 http://kali.download/kali kali-rolling/contrib amd64 Packages [106 kB]
+Get:5 http://kali.download/kali kali-rolling/contrib amd64 Contents (deb) [157 kB]
+Get:6 http://kali.download/kali kali-rolling/non-free amd64 Packages [221 kB]
+Get:7 http://kali.download/kali kali-rolling/non-free amd64 Contents (deb) [944 kB]
+Fetched 62.2 MB in 10s (5,928 kB/s)                                                                                                                          
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1630 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+ $ sudo apt list --upgradeable -> to update all the applications and software/package in the linux
+Listing... Done
+acl/kali-rolling 2.3.1-1 amd64 [upgradable from: 2.2.53-10]
+adduser/kali-rolling 3.123 all [upgradable from: 3.118]
+adwaita-icon-theme/kali-rolling 43~beta.1-2 all [upgradable from: 40.1.1-2]
+..
+..
+…
+….
+
+
+
+$ apt upgrade -> before installing any package run this command.
+
+
+To check if the package is installed or not, use WHICH command
+$ which metaflac 
+/usr/bin/metaflac
+
+To find the package/software in the package management system. If not installed.
+$ apt search pdftk                                                                                                                                    
+Sorting... Done
+Full Text Search... Done
+csvkit/kali-rolling 1.0.7-1 all
+  command-line tools for working with CSV
+csvkit-doc/kali-rolling 1.0.7-1 all
+  documentation for csvkit
+pdftk/kali-rolling 2.02-5+b1 amd64
+  transitional package for pdftk, a tool for manipulating PDF documents
+pdftk-java/kali-rolling 3.3.2-1 all
+  pdftk port to java - a tool for manipulating PDF documents
+python3-csvkit/kali-rolling 1.0.7-1 all
+  public modules for csvkit (Python 3)
+
+To show information about the package
+$ apt show pdftk  
+Package: pdftk
+Version: 2.02-5+b1
+Priority: optional
+Section: text
+Source: pdftk (2.02-5)
+Maintainer: Johann Felix Soden <johfel@debian.org>
+Installed-Size: 28.7 kB
+Depends: pdftk-java
+Homepage: https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+Tag: implemented-in::c++, implemented-in::java, interface::commandline,
+ role::program, scope::utility, use::converting, use::editing,
+ works-with-format::pdf, works-with::text
+Download-Size: 16.7 kB
+To install the package use install command
+$ sudo apt install pdftk      
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  fastjar gcc-11-base jarwrapper
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+
+To check again whether it is installed or not.
+$ which pdftk                                                                                                                                           
+/usr/bin/pdftk
+
+To remove/uninstall the package, use remove command.
+$ sudo apt remove pdftk 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+…..
+Removing pdftk (2.02-5+b1) ...
+
+If some files still in the system even after removing the package.
+$ sudo apt purge pdftk 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package 'pdftk' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  fastjar gcc-11-base jarwrapper libapache-pom-java libbcprov-java libcommons-lang3-java libcommons-parent-java pdftk-java
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 1630 not upgraded.
+
+$ apt autoremove
+
+Manually install software.
+
+If we want to install a package whose pre requisite packages are not installed, so use below command.
+$apt install build-essential automake checkinstall libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake gcc curl
+Want to install a package which is not available in the package system or want to do from internet.
+$ which git -> to check whether git is already installed or not.
+Use wget command to hit the url directly, without opening it in browser.
+$cd Downloads
+$wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.3.tar.gz
+
+unzip the downloaded tar file with below command
+$tar xfz git-2.29.3.tar.gz
+$ls
+$cd git-2.29.3/
+check install help file.
+$less INSTALL
+create a configure file, it will create make file
+$./configure
+Launch make file, make utility uses makefile tto install the git.
+$make
+$sudo make install
+
+check git version after installing it.
+git --version
