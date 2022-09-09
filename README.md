@@ -1,6 +1,6 @@
 # Linux_Learning101
 
-<<<Refrences and note from @TCM security, Linux 101 courses.>>>
+<<<Refrences and notes from @TCM security, Linux 101 courses.>>>
 
 General Links
 Cyber Mentor website: https://www.thecybermentor.com/
